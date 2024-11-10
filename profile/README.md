@@ -1,31 +1,157 @@
 # 2024년 1학기 한림대학교 소프트웨어 캡스톤디자인
 [![Hits](https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fgithub.com%2FCodeburner2024%2Fhit-counter&count_bg=%23FFC500&title_bg=%23FF0000&icon=&icon_color=%23E7E7E7&title=hits&edge_flat=false)](https://hits.seeyoufarm.com)
-## 팀명
-🔥Codeburner(코드버너)🔥
+![슬라이드1](https://github.com/user-attachments/assets/ceda3614-0555-4c16-ba1f-9b32961b9849)
 
-## 팀장
-- 22학번 엄지은 (PM manger)
+## 프로젝트 소개 
+- 코드버너의 '프로젝트 여우별'은 인공지능을 활용한 기숙사 화재 관리 시스템입니다.
+- 젯슨 나노 기반의 지능형 CCTV가 실시간으로 불꽃과 연기를 탐지합니다.
+- 웹에서는 CCTV가 감지한 화재 현장의 영상과 위치, 예측의 정확도를 확인 가능합니다.
 
-## 팀원
-- 19학번 박준영 (SE System Engineer)
-- 19학번 홍기혁 (CTO Chief Technology Officer)
-- 19학번 김민수 (SM System Manger)
-- 20학번 임정은 (TA Techical Artist)
+## 팀 소개
+#### 팀명
+🔥Codeburner (코드버너)🔥
+#### 팀장
+- 22학번 엄지은 (PM, manger)
+#### 팀원
+- 19학번 박준영 (SE, System Engineer)
+- 19학번 홍기혁 (CTO, Chief Technology Officer)
+- 19학번 김민수 (SM, System Manger)
+- 20학번 임정은 (TA, Techical Artist)
+
+-----------------------------------
+
+## 개발 배경 및 동기
+23년 11월 02일 새벽, 한림대학교 학생생활관 4관에서 일어난 화재로 150여 명의 사생들이 대피하는 일이 벌어졌다. 이에 대학 생활 플랫폼 ‘에브리타임’에서는 ‘사이렌 소리가 들리지 않았다’ ‘안내 방송이 늦었다’등 기존 화재 감지 시스템에 대한 불만이 제기되었다.
+
+당일 사생위원단의 공지사항에 따르면, 학교 측은 해당 사건에 관해 호실 이동, 도배 및 공사, 공결 처리, 피해 지원금 및 환불, 침구류 배부 등의 조치를 예고했다. 이는 행정 효율과 예산 관리 측면에서 대단한 손해라고도 볼 수 있었다.
+
+화재의 피해를 최소화하기 위해서는 신속하고 정확한 감지가 핵심이다. 그러나 현재 대다수의 화재 감지 시스템은 관리자가 CCTV 화면을 지켜보는 식으로, 충분한 인력이 뒷받침되지 않으면 정확도가 낮다.
+
+#### 팀 코드버너는 이를 해결하기 위해 기계학습 기반의 화재 감지 시스템 ‘프로젝트 여우별’을 제안한다.
+
+-----------------------------------
+
+## 개발 내용
+#### 브랜딩
+🦊 여우별: 궂은 날 구름 사이에 잠깐 났다가 다시 그 속으로 숨는 별을 의미하는 순우리말
+
+학생생활관은 학생들이 장시간 머물며 생활하는 곳으로, 단체 생활이 이뤄짐과 동시에 매우 사적인 공간이라고도 할 수 있다. 따라서 기존 CCTV가 가지고 있던 ‘눈’ 또는 ‘감시자’의 이미지에서 벗어나 ‘학생들을 지켜주는 하늘 위의 별’이라는 인식을 만들고자 하였다.
+
+#### 결과물 구성
+☝️ IoT를 기반으로 구현한 지능형 CCTV로 기숙사 내부를 촬영한다. 
+
+CCTV에 삽입된 객체 탐지 모델은 촬영된 영상을 분석해 불꽃과 연기를 찾아낸다. 해당 결과는 웹 페이지로 실시간 전송되어 기숙사 관리자가 확인할 수 있도록 한다. 또한, 장비를 선택적으로 배치할 수 있도록 RaspBerryPi와 JetSon Nano로 작업하였다.
+
+✌️ 메인 대시보드로 당일의 날씨, 화재 detection Log, 실시간 CCTV 영상, 화재 발생 위치 등의 정보를 제공한다. 
+
+허가된 관리 인력만 접근할 수 있도록 로그인 기능을 가지고 있고, 카메라 변경 및 삭제가 가능한 설정 페이지 또한 갖추었다. 또한, 태블릿 혹은 모바일에서도 사용할 수 있도록 적응형 웹으로 제작하였으며 필요에 따라 다양한 기기에서 작업할 수 있도록 수정이 가능하다. 
+
+-----------------------------------
+## 개발 과정
+#### 개발 환경
+- Front: React (HTML, JavaScript, CSS) 
+- AI: Python, PyTorch, OpenCV
+- Hardware: NVIDIA Jetson Nano 4GB, Raspberry Pi 4B
+- 디자인: Illustrator
+- 버전 및 이슈관리 : Github
+- 협업 툴 : Notion
+  
+#### 역할 분담
+- 엄지은: 개발 총괄, 발표자료 제작, 예산 관리
+- 김민수: 데이터 수집, 화제 여부 판단 모델 제작
+- 박준영: 지능형 CCTV 제작, 모델 삽입 및 디버깅
+- 홍기혁: 시스템 테스트 및 오류 수정, 시스템 통합
+- 임정은: 웹 페이지 기획 및 개발, 시연 영상 제작
+
+#### 개발 기간
+🔥2024.03 ~ 2024.05🔥
+- 3월: 기획서 작성, 시스템 구조도 작성, 개발환경 구축, 딥러닝 모델 선택 및 학습 데이터 수집
+- 4월: 지능형 CCTV 제작 (라즈베리파이), 화재 여부 판단 모델 제작, 웹 페이지 제작
+- 5월: 지능형 CCTV 제작 (젯슨 나노), 모델 경량화 및 최적화, 모델 성능 테스트, 반응형/적응형 웹 구현
+
+-----------------------------------
+
+## 페이지별 설명
+#### 로그인 페이지
+<img src="https://github.com/user-attachments/assets/cce2943c-c6f4-492d-a490-f60eef793c8c" width="50%" height="50%"/>
+
+- (1): 접속 시 보이는 화면으로, 아이디 및 비밀번호 입력창
+- (2): 체크박스 (아이디 및 비밀번호 기억하기)
+- (3): 누르면 다음 페이지로 넘어갈 수 있는 하이퍼링크, 리액트 라우팅이 첨부된 로그인 버튼
+- (4): 비밀번호 및 아이디를 찾는 페이지로 넘어가는 공간
+
+#### 메인 페이지 (PC)
+<img src="https://github.com/user-attachments/assets/2fb1917d-1ce4-4a83-bbe5-a76890186534" width="80%" height="80%"/>
+
+- (1): 날씨 API를 활용해 날씨와 그에 맞는 이미지, 온도를 표시
+- (2): fire 기록을 위한 오른쪽 레이아웃으로, 실시간으로 화재 기록을 저장 및 사용자에게 보여주는 화면
+- (3): 기숙사 별 화재 알림 칸으로, 화재 발생 시 기숙사 칸이 붉은 색으로 채워지면서 위험을 알린다.
+- (4): 실시간 기숙사 화재 감지 시스템 카메라로, 해당 감시카메라가 어디에 설치 되어있는지 상단에서 확인 가능
+
+#### 메인 페이지 (모바일)
+<img src="https://github.com/user-attachments/assets/7609ebe7-dba1-4ee7-bd00-934db6e75d51" width="50%" height="50%"/>
+
+- (1)_2: 모바일형으로 제작된 화면이나, 아이패드 및 태블릿에서도 반응형으로 작동
+  
+➡️ 데스크탑 전용 메인 페이지에서 화면 간격 및 해상도가 1227 * nnn 이하가 된다면, 하단에 ‘모바일 바로가기’ 버튼이 생성되어 버튼 클릭 시 해당 모바일 반응형 홈페이지로 넘어간다. (리액트 라우팅 돔 라이브러리 사용.)
+
+- (2)_2: 실시간 기숙사 화재 감지 시스템 카메라로, 해당 감시카메라가 어디에 설치 되어있는지 상단에서 확인 가능
+
+➡️ 작은 화면용이기에 주로 사용되는 감지 카메라를 확인하는 부분만 삽입
+
+#### 설정 페이지 (PC)
+<img src="https://github.com/user-attachments/assets/c0115c52-5d77-4dcd-abcd-bf66075cae2e" width="80%" height="80%"/>
+
+- (1): 전체 감지 카메라를 확인할 수 있는 폴더로, 선택 후 클릭하면 해당 기숙사에 속해 있는 감지 카메라들의 목록이 보인다.
+- (2): (1)에서 찾은 감지 카메라들 중 주의 깊게 확인해야 할 카메라나, 고장의 우려가 높은 카메라를 위한 즐겨찾기 목록
+- (3): 카메라 강제 종료 버튼이 존재하는 ON/OFF 부분
+
+➡️ 실수를 방지하기 위해 확인 메시지 및 예/아니오 선택 버튼을 누르지 않으면 실행되지 않도록 제작, 오른쪽 상단에 위치한 자물쇠를 누르면 잠금 상태가 되어 클릭이 통하지 않는다.
+
+- (4): 실시간으로 탐지하는 영상으로, JetSon Nano에서 송출한 영상을 실시간으로 보여주며 해당 부분은 RaspBerryPi로 교체 가능
+- (5): 카메라 이상 관리 목록 (붉은색 박스는 고장, 초록색 박스는 정상, 주황색 박스는 교체가 필요한 경우를 의미)
+- (6): 관리자 정보 목록 (로그인 페이지에서 받은 학번 및 사번 표기 및 사감의 종류를 표시)
+
+➡️ 해당 페이지는 관리자 전용 페이지 이므로, 관리자 유형 부분을 추가해 두었다. 그 외 하단은 화재 탐지에 대한 확률을 표기한다. 정확한 화재의 탐지를 위해 정확도에 대한 표기 부분이고 관리자가 확률을 보고 영상(4)을 보는 로직을 수행하게 된다.
+
+-----------------------------------
+
+## 문제 해결
+#### 아두캠 호환 문제
+본 시스템은 지능형 CCTV에서 촬영한 영상을 실시간 분석해 화재를 인식한다. 프로젝트 초기에는 CCTV 제작을 위해 ‘라즈베리파이4B’를 사용했고, 이때 ArduCAM-M-5MP(OV5642) PIN과의 호환이 문제가 되었다. 이는 아두이노를 기준으로 만들어진 아두캠과 라즈베리파이의 전압 차가 원인으로, 그에 따라 전압을 변경하여 작동 여부를 확인하였으나 화면 꺼짐 현상이 지속적으로 발생하였다. *따라서 카메라 모듈을 변경함으로써 기기 간 호환성을 확보하였다.*
+
+#### 파이캠 호환 문제
+이 단락은 아래 설명할 라즈베리파이의 성능 문제와도 직결되는 사안으로, 경량화 모델의 작동 가능 여부와 프레임의 한계를 서술하고 있다. 앞서 아두캠의 호환 문제를 해결하기 위해 Raspberry Pi Camera Module 3가 선택되었다. 이 모듈의 경우 교내 wifi를 사용하면서도 원활한 통신이 가능했고, OpenCV 설치와 YOLO 학습 데이터 삽입 또한 가능했다. 
+
+*그러나 웹 연결 후 Real-time으로 영상을 확인한 결과 프레임이 매우 낮다는 문제점이 있었다.* 화재의 경우 빠른 감지가 핵심으로, 영상 전송 속도는 해당 프로젝트에서 중점이 되는 사안이다. 따라서 인공지능 파트에서는 모델 경량화를 진행하였다.
+
+이 과정에서 Camera Module 3 또한 호환 문제가 발생하였다. 경량화된 모델을 사용하기 위해서는 picamera를 사용해야 하지만, v3 카메라는 libcamera 환경만 지원하기 때문이다. 팀 내에서 보유하고 있던 v2 카메라도 프레임의 한계가 명확하여 프로젝트 여우별의 개발에는 적합하지 않았다. *이에 따라 로지텍 HD WebCam C270로 최종적인 카메라 선택을 마쳤다.*
+
+#### 라즈베리파이 성능 문제
+앞서 서술한 바와 같이 YOLO 학습 데이터를 컴퓨터 보드에 삽입 후 이를 Real-time으로 확인하는 과정에서 프레임 문제가 발생하였다. 모델의 성능과 속도는 필연적으로 반비례 관계를 가지므로, 개발 과정에서 둘 중 무엇에 초점을 두고 작업할 것인지가 관건이 되었다. 이에 화재 관리라는 특수성을 고려하여, 수치로 확인되는 성능지표보다 빠른 불꽃 탐지를 목표로 모델 다운그레이드를 진행하였다.
+
+YOLO 모델 버전 중 YOLOv8 nano(YOLOv8n)을 처음으로 학습에 사용했고, 다운그레이드 후에도 라즈베리파이가 연산하기에는 너무 무겁다는 결론을 도출했다. 따라서 YOLOv5를 사용하다 더 높은 FPS(frames per second, 초당 프레임 수)를 기대하고 YOLOv5n6를 적용해보았다. 하지만 세 번째 버전 또한 기대보다 낮은 프레임 수를 보여 모델 경량화를 시도하였다.
+
+경량화를 위해 Pruning 가지치기를 사용하였다. 이는 모델 학습에서 중요도가 낮은 0에 수렴하는 파라미터의 가중치를 0으로 바꾸고 연결을 제거하는 테크닉이다. 가지치기의 장점은 추론 속도가 빨라지며, 일반화 성능을 높이는 것이다. 
+
+이와 같은 시도에도 불구하고 부족한 성능과 카메라 호환의 문제로 선택하게 된 것이 앞서 언급한 로지텍 HD WebCam C270와 NVIDIA Jetson Nano™ Developer Kit이다. 로지텍 웹캠과 젯슨 나노로 제작한 하드웨어에 경량화 이전 모델을 기준으로 최적화하여 충분한 성능을 확보하였다.
+
+-----------------------------------
 
 ## 최종발표자료
-![슬라이드1](https://github.com/user-attachments/assets/68416dbd-04f6-4482-bc22-03b4f72e2f4b)
-![슬라이드2](https://github.com/user-attachments/assets/87acba9c-1478-4367-9f6a-1dbcc9e6e065)
-![슬라이드3](https://github.com/user-attachments/assets/363c79c3-66fe-4d8c-9aef-a340886e8cfd)
-![슬라이드4](https://github.com/user-attachments/assets/4b323dd4-8d28-493f-870e-4b606620426f)
-![슬라이드5](https://github.com/user-attachments/assets/67297578-1308-4634-8675-e0180e5e19fe)
-![슬라이드6](https://github.com/user-attachments/assets/77eb3afb-eac8-4da2-9cac-4a091dbe148d)
-![슬라이드7](https://github.com/user-attachments/assets/553acf81-9cb4-4ee4-aaea-3b0d26e4f6e5)
-![슬라이드8](https://github.com/user-attachments/assets/021b6f4a-bde7-4c3e-a42b-158a6511713a)
-![슬라이드9](https://github.com/user-attachments/assets/c84ce46e-75e7-4834-a374-ce316410995b)
-![슬라이드10](https://github.com/user-attachments/assets/64368ea4-be0d-4b77-8816-472ad3f34fea)
-![슬라이드11](https://github.com/user-attachments/assets/39a066fb-ec6c-4024-8bfb-395571c1f8f1)
-![슬라이드12](https://github.com/user-attachments/assets/3012ae5f-310a-4ff2-834b-aa8f6b1c4950)
-![슬라이드13](https://github.com/user-attachments/assets/6a92978a-3d91-4c50-8021-20234cbef812)
-![슬라이드14](https://github.com/user-attachments/assets/98732386-229e-4868-b6b9-ec36f34a13f1)
-![슬라이드15](https://github.com/user-attachments/assets/5c335eba-b060-416f-9725-076615446b19)
-![슬라이드16](https://github.com/user-attachments/assets/67d77809-4859-40fe-8a5e-bf7078960cff)
+![슬라이드1](https://github.com/user-attachments/assets/efcdbc0e-47f7-4919-8929-704dafdc13b4)
+![슬라이드2](https://github.com/user-attachments/assets/cf0769d0-69b4-400e-8a03-84ca9446491e)
+![슬라이드3](https://github.com/user-attachments/assets/697b322c-49bd-43bf-8b01-1d8d93a5e2d8)
+![슬라이드4](https://github.com/user-attachments/assets/5601fbe7-9fdb-456b-a7ba-a5ec3c6efb93)
+![슬라이드5](https://github.com/user-attachments/assets/c2fd7df5-2b6d-4d93-9b1f-d1060675b558)
+![슬라이드6](https://github.com/user-attachments/assets/efdebb13-1b20-4032-843b-aef7a90c4ea4)
+![슬라이드7](https://github.com/user-attachments/assets/c02e7e75-d58c-4421-8cc6-3eb5c5fada54)
+![슬라이드8](https://github.com/user-attachments/assets/46276d2b-a35c-44fe-9031-560e34f4f6c9)
+![슬라이드9](https://github.com/user-attachments/assets/6d074586-7e88-45a2-9fa1-8f2f5fb41885)
+![슬라이드10](https://github.com/user-attachments/assets/8e0b2f75-0197-427c-af0a-476719ae4080)
+![슬라이드11](https://github.com/user-attachments/assets/f37aba13-c8ed-4732-aae5-fa11741cb895)
+![슬라이드12](https://github.com/user-attachments/assets/4a5e0cb1-5b5f-41ea-8a66-e68c21fdbf62)
+![슬라이드13](https://github.com/user-attachments/assets/e3408f72-c30c-45ad-9e19-e4ae41bfe5f6)
+![슬라이드14](https://github.com/user-attachments/assets/19c1bbd8-8cce-4187-8c6f-7344a4dc7789)
+![슬라이드15](https://github.com/user-attachments/assets/6bd591c2-22b5-4fbb-a477-23a30f9f0df1)
+![슬라이드16](https://github.com/user-attachments/assets/39ceb6d3-7b9f-4cde-a506-002ffd920676)
